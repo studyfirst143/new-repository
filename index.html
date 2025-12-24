@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full w-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body class="h-screen bg-blue-500">
+  <main class="bg-blue-500 h-screen flex items-center justify-center">
+    <article class="bg-slate-100 border px-8 py-4 rounded flex flex-col items-center w-[300px] shadow-2xl">
+
+
+        <p class="pb-8 font-bold text-3xl">Counter</p>
+
+        <p class=" font-bold text-4xl pb-4" id="p-score">0</p>
+
+        <div class="btns">
+            <button id="btn-add" class="bg-green-400 px-4 py-1 text-[20px] font-bold cursor-pointer active:bg-slate-500">+</button>
+            <button id="btn-reset" class="bg-orange-400 px-2 py-1 text-[20px] font-bold cursor-pointer active:bg-slate-500">reset</button>
+             <button id="btn-minus" class="bg-red-700 px-4 py-1 text-[20px] font-bold cursor-pointer active:bg-slate-500">-</button>
+        </div>
+
+
+    </article>
+
+  </main>
+
+
+  <script>
+    const score = document.getElementById("p-score");
+    const btnadd = document.querySelector("#btn-add");
+    const btnminus = document.querySelector("#btn-minus");
+    const reset = document.querySelector("#btn-reset");
+
+      let result = parseInt(score.textContent);
+    btnadd.addEventListener("click", () =>{
+
+  score.textContent = ++result;
+    });
+
+
+    btnminus.addEventListener("click", () =>{
+       
+       
+
+        if(result >= 1){
+             score.textContent = --result;
+        }
+    });
+
+    reset.addEventListener("click", () =>{
+        score.textContent = "0";
+    })
+  </script>
+</body>
+</html>
